@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Luciana 💌</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px 14px;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top, #65151d 0%, transparent 40%),
+        linear-gradient(135deg, #130d12, #300d14 60%, #100c11);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .escena {
+      position: relative;
+      width: min(100%, 440px);
+      text-align: center;
+    }
+
+    .sobre {
+      position: relative;
+      width: 100%;
+      height: 270px;
+      margin: 20px auto;
+      border-radius: 12px;
+      background: #a51625;
+      box-shadow: 0 14px 35px #0009;
+      cursor: pointer;
+      perspective: 1000px;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .sobre::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      border-radius: 12px;
+      background: linear-gradient(145deg, transparent 49%, #7c101c 50%);
+      clip-path: polygon(0 0, 100% 0, 50% 68%);
+      pointer-events: none;
+    }
+
+    .solapa {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      height: 55%;
+      background: #d62935;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top;
+      transition: transform 0.8s ease;
+    }
+
+    .sello {
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      z-index: 4;
+      transform: translate(-50%, -50%);
+      color: #ffd84d;
+      font-size: 42px;
+      text-shadow: 0 3px 8px #0008;
+      transition: opacity 0.3s ease;
+    }
+
+    .texto-sobre {
+      position: absolute;
+      right: 10px;
+      bottom: 18px;
+      left: 10px;
+      z-index: 4;
+      color: #fff3c4;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .carta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      width: calc(100% - 36px);
+      max-height: 65vh;
+      overflow-y: auto;
+      padding: 24px 20px;
+      border: 2px solid #d8ad36;
+      border-radius: 12px;
+      background: #fff8e8;
+      color: #24151a;
+      box-shadow: 0 10px 30px #0008;
+      text-align: left;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.75);
+      transition:
+        top 0.8s ease,
+        opacity 0.7s ease,
+        transform 0.8s ease;
+    }
+
+    .carta h1 {
+      margin: 0 0 8px;
+      color: #a51625;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .dedicatoria {
+      margin: 0 0 18px;
+      color: #65440c;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .mensaje {
+      margin: 0;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .boton {
+      margin-top: 10px;
+      padding: 12px 20px;
+      border: 2px solid #ffd84d;
+      border-radius: 999px;
+      background: #a51625;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #0005;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
+      background: #d62935;
+    }
+
+    .escena.abierta .solapa {
+      transform: rotateX(180deg);
+    }
+
+    .escena.abierta .sello,
+    .escena.abierta .texto-sobre {
+      opacity: 0;
+    }
+
+    .escena.abierta .carta {
+      top: 50%;
+      z-index: 5;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .escena.abierta .sobre {
+      opacity: 0.25;
+      transform: scale(0.88);
+    }
+
+    .corazon {
+      position: fixed;
+      bottom: -40px;
+      z-index: 10;
+      color: #ff4059;
+      font-size: 24px;
+      pointer-events: none;
+      animation: flotar 3.5s ease-in forwards;
+      text-shadow: 0 0 10px #ff405988;
+    }
+
+    @keyframes flotar {
+      0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg) scale(0.7);
+      }
+      15% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(25deg) scale(1.3);
+      }
+    }
+
+    @media (max-width: 380px) {
+      .carta {
+        padding: 18px 15px;
+      }
+
+      .mensaje {
+        font-size: 14px;
+      }
+    }
+    position: relative;
+    z-index: 10;
+.foto {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  max-height: 220px;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  border: 3px solid #d8ad36;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px #0003;
+}
+
+.escena {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 440px);
+  text-align: center;
+}
+
+.imagenes-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imagenes-fondo img {
+  position: absolute;
+  width: clamp(75px, 18vw, 150px);
+  height: clamp(75px, 18vw, 150px);
+  object-fit: cover;
+  border: 3px solid #d8ad36;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px #0008;
+}
+
+.imagen-1 {
+  top: 5%;
+  left: 4%;
+  transform: rotate(-10deg);
+}
+
+.imagen-2 {
+  top: 8%;
+  right: 4%;
+  transform: rotate(9deg);
+}
+
+.imagen-3 {
+  bottom: 6%;
+  left: 5%;
+  transform: rotate(8deg);
+}
+
+.imagen-4 {
+  right: 5%;
+  bottom: 7%;
+  transform: rotate(-9deg);
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="imagenes-fondo" aria-hidden="true">
+  <img class="imagen-1" src="recuerdo1.jpg" alt="">
+  <img class="imagen-2" src="recuerdo2.jpg" alt="">
+  <img class="imagen-3" src="recuerdo3.jpg" alt="">
+  <img class="imagen-4" src="recuerdo4.jpg" alt="">
+</div>
+  <main class="escena" id="escena">
+    <div class="sobre" id="sobre" role="button" tabindex="0" aria-label="Abrir la carta">
+      <div class="solapa"></div>
+      <div class="sello">♥</div>
+      <div class="texto-sobre">Toca para abrir 💌</div>
+
+      <article class="carta">
+        <h1>💌 Una carta para ti</h1>
+        <p class="dedicatoria">Para Luciana, de Brayan ❤️</p>
+        <img class="foto" src="recuerdo.jpg" alt="un recuerdo especial">
+
+        <p class="mensaje">Oaaa, sorrita. Yo sé que nunca te he hecho cosas buenas, pero esta vez quería hacer algo lindo por mí mismo. Bueno, aunque es con ayuda de una IA, quería hacértelo para ti, mi sorrita.
+
+Quiero decirte que te amo mucho y que nunca te dejaría por nada en este mundo, ni siquiera por una discusión, amor. Cuando vivamos juntos, espero que no te enojes cuando te prepare algo por las mañanas, jijiji.
+
+Amorcito, te amo mucho. Amo cuando te expresas, cuando sueltas tu olor y cuando tratas de ponerte linda, aunque para mí eres linda sin maquillaje.
+
+Te amo mucho, Luciana Limay, y espero que podamos casarnos sin ninguna dificultad en nuestra vida, amor. También espero poder bailar contigo algún día saya :3
+y sabes siempre recordare nuestros momentos super felices sorrita y quiero amarte por la eternidad.</p>
+      </article>
+    </div>
+
+    <button class="boton" id="boton">Abrir mi carta 💌</button>
+  </main>
+
+  <script>
+    const escena = document.getElementById("escena");
+    const sobre = document.getElementById("sobre");
+    const boton = document.getElementById("boton");
+
+    function abrirCarta() {
+      if (escena.classList.contains("abierta")) return;
+
+      escena.classList.add("abierta");
+      boton.textContent = "❤️";
+      crearCorazones();
+    }
+
+    function crearCorazones() {
+      const simbolos = ["♥", "❤", "💛"];
+
+      for (let i = 0; i < 18; i++) {
+        setTimeout(() => {
+          const corazon = document.createElement("span");
+          corazon.className = "corazon";
+          corazon.textContent =
+            simbolos[Math.floor(Math.random() * simbolos.length)];
+          corazon.style.left = Math.random() * 100 + "vw";
+          corazon.style.animationDuration = 2.5 + Math.random() * 2 + "s";
+
+          document.body.appendChild(corazon);
+
+          setTimeout(() => corazon.remove(), 5000);
+        }, i * 120);
+      }
+    }
+
+    boton.addEventListener("click", abrirCarta);
+    sobre.addEventListener("click", abrirCarta);
+
+    sobre.addEventListener("keydown", (evento) => {
+      if (evento.key === "Enter" || evento.key === " ") {
+        evento.preventDefault();
+        abrirCarta();
+      }
+    });
+  </script>
+</body>
+</html>
